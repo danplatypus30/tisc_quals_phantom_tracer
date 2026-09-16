@@ -1,0 +1,14 @@
+Phantom Tracer
+TISC@DEF CON SG
+description
+We deployed our Phantom Tracer system to hunt down a new threat in the digital infrastructure, but intelligence confirms our worst fears: the phantom has compromised the tracer and taken control. We need to act fast and regain control of it before the phantom disappears completely. Ironically, the security flaws we never patched when prioritising speed might be our only way back in. The hunt has become a race against time.
+
+nc chals.tisc-dc26.csit-events.sg 31629
+
+attached files
+libc.so
+phantom_tracer
+
+# my comments
+# on wsl ubuntu
+cd /mnt/c/users/Lenovo/Desktop/ctfs/tisc_quals_phantom_tracer
