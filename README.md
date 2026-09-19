@@ -14,10 +14,7 @@ phantom_tracer <br>
 I decided to do a writuep for this heap pwn challenge, hopefully it helps anyone who wants to learn pwn without blindly clanking :)
 
 Setup:
-Windows Laptop
-Ubuntu WSL
-Ghidra
-pwndbg
+Windows Laptop, Ubuntu WSL, Ghidra, pwndbg
 
 ## Writeup
 
