@@ -32,11 +32,11 @@ See how it works.
 
 <img src="images/run5.png" alt="run5" style="height:50px;"> 
 
-4 commands, since its a heap pwn challenge, we likely know:
-1 - create heap
-2 - modify data at heap
-3 - free heap
-4 - read data at heap
+4 commands, since its a heap pwn challenge, we likely know: <br>
+1 - create heap<br>
+2 - modify data at heap<br>
+3 - free heap<br>
+4 - read data at heap<br>
 
 There likely has to be some overflow vulnerability to leak some data.
 
