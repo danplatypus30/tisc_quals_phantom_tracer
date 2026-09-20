@@ -42,6 +42,50 @@ There likely has to be some overflow vulnerability to leak some data.
 
 ### 2. Ghidra
 
-Pull up the program in Ghidra
+Pull up the program in Ghidra, it should open the `main()` function automatically. <br>
+I modified some variable names: `new_heap`, `total_size`, `input`, `index`, `curr_index`. <br>
+These can be derived from functions like `scanf`, the increments after each loop and the output text. <br>
+
+input == 4, read data at heap
+
+<img src="images/ghidra1.png" alt="ghidra1" style="height:80px;"> 
+
+This reads the data stored in the heap at that index. <br>
+`write(1, address of start of that node, size of that node)`
+<br>
+
+input == 3, free heap
+
+<img src="images/ghidra2.png" alt="ghidra2" style="height:100px;"> 
+
+This frees the specified node.<br>
+Note that the data in that node is not cleared.
+<br>
+
+input == 1, create heap
+
+<img src="images/ghidra3.png" alt="ghidra3" style="height:250px;"> 
+
+There can be max 9 nodes.<br>
+"Signal strength" refers to size of the new node, max 1080<br>
+It then `malloc`s the size, then points the next node at this address.<br>
+Then increments total size.
+<br>
+
+input == 2, modify data at heap
+
+<img src="images/ghidra4.png" alt="ghidra4" style="height:100px;"> 
+
+Similar to the write above<br>
+`read(1, address of start of that node, size of that node)`
+
+<br>
+
+To put data in the node, we need to create -> modify.<br>
+Free-ing does not clear the data. Vulnerable.<br>
+`chunks` and `sizes` are probably a bunch of pointers, each new node is `malloc`-ed and each pointer points to the allocated memory in the heap.
+
+
+
 
 
